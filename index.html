@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinkIITin - A Platform by M Sree Ganesh Naik</title>
+  <!-- Import Google Fonts for dominant (Aref Ruqaa) and minor (Aref Ruqaa Ink) text -->
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=Aref+Ruqaa+Ink&display=swap" rel="stylesheet" />
+  <!-- Link to external CSS file for the main page -->
+  <link rel="stylesheet" href="Styles.css" />
+</head>
+<body>
+  <!-- HEADER SECTION -->
+  <header>
+    <div class="header-content">
+      <!-- Left: (Optional empty container for balance) -->
+      <div class="left"></div>
+      <!-- Center: Clickable Website Title -->
+      <div class="center">
+        <a href="index.html" class="logo">LinkIITin</a>
+      </div>
+      <!-- Right: Hamburger Icon with attached dropdown menu -->
+      <div class="right">
+        <label for="menu-toggle" class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <!-- Hidden checkbox to toggle dropdown -->
+        <input type="checkbox" id="menu-toggle" />
+        <nav class="dropdown-menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profiles.html">Profiles</a></li>
+            <li><a href="yourprofile.html">Your Profile</a></li>
+            <li><a href="createdby.html">Created By</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT SECTION -->
+  <main>
+    <section class="hero">
+      <h1>Welcome to LinkIITin</h1>
+      <p>A professional networking platform for IIT and NIT students.</p>
+    </section>
+    <section class="search-section">
+      <h2>Search Profiles by Programming Language</h2>
+      <form action="search_profiles.php" method="GET">
+        <input type="text" name="language" placeholder="Type programming language(s)..." required />
+        <button type="submit">Search</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER SECTION -->
+  <footer>
+    <p>&copy; 2025 M Sree Ganesh Naik. All rights reserved.</p>
+  </footer>
+</body>
+</html>

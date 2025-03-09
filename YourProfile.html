@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Profile - LinkIITin</title>
+  <!-- Import Google Fonts for dominant (Aref Ruqaa) and minor (Aref Ruqaa Ink) text -->
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=Aref+Ruqaa+Ink&display=swap" rel="stylesheet">
+  <!-- Link to the YourProfile CSS file -->
+  <link rel="stylesheet" href="YourProfile.css">
+</head>
+<body>
+  <!-- HEADER SECTION -->
+  <header>
+    <div class="header-content">
+      <!-- Left: Back button linking to home -->
+      <div class="left">
+        <a href="index.html" class="back-button">← Back</a>
+      </div>
+      <!-- Center: Clickable Website Title -->
+      <div class="center">
+        <a href="index.html" class="logo">LinkIITin</a>
+      </div>
+      <!-- Right: Hamburger Icon with attached dropdown menu -->
+      <div class="right">
+        <label for="menu-toggle" class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <!-- Hidden checkbox for toggling dropdown menu -->
+        <input type="checkbox" id="menu-toggle">
+        <nav class="dropdown-menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profiles.html">Profiles</a></li>
+            <li><a href="yourprofile.html">Your Profile</a></li>
+            <li><a href="createdby.html">Created By</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+  <!-- MAIN CONTENT SECTION -->
+  <main>
+    <section class="yourprofile-section">
+      <h1>Your Profile</h1>
+      <div class="profile-info">
+        <!-- Left Column: Profile Image Container (No hover animation) -->
+        <div class="profile-img-container">
+          <img src="https://4kwallpapers.com/images/walls/thumbs_3t/18349.jpg" alt="Profile Picture" class="profile-img">
+        </div>
+        <!-- Right Column: Profile Details -->
+        <div class="profile-details">
+          <h2>Your Name</h2>
+          <p>Email: you@example.com</p>
+          <p>Mobile: 7032889759</p>
+          <p>Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et metus nec sapien pharetra semper.</p>
+        </div>
+      </div>
+      <!-- Edit Icon positioned at the bottom right corner -->
+      <a href="CreateYourprofile.html" class="edit-icon" title="Edit Profile">&#9998;</a>
+    </section>
+  </main>
+  
+  <!-- FOOTER SECTION -->
+  <footer>
+    <p>&copy; 2025 M Sree Ganesh Naik. All rights reserved.</p>
+  </footer>
+</body>
+</html>

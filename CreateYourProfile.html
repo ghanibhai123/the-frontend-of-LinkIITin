@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Your Profile - LinkIITin</title>
+  <!-- Import Google Fonts for dominant (Aref Ruqaa) and minor (Aref Ruqaa Ink) text -->
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=Aref+Ruqaa+Ink&display=swap" rel="stylesheet" />
+  <!-- Link to the CreateYourprofile CSS file -->
+  <link rel="stylesheet" href="CreateYourprofile.css" />
+  <!-- Include the Supabase JS client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@latest/dist/supabase.min.js"></script>
+</head>
+<body>
+  <!-- HEADER SECTION -->
+  <header>
+    <div class="header-content">
+      <!-- Left: Back button linking to Your Profile page -->
+      <div class="left">
+        <a href="yourprofile.html" class="back-button">← Back</a>
+      </div>
+      <!-- Center: Clickable Website Title -->
+      <div class="center">
+        <a href="index.html" class="logo">LinkIITin</a>
+      </div>
+      <!-- Right: Hamburger Icon with attached dropdown menu -->
+      <div class="right">
+        <label for="menu-toggle" class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <!-- Hidden checkbox for toggling dropdown -->
+        <input type="checkbox" id="menu-toggle" />
+        <nav class="dropdown-menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profiles.html">Profiles</a></li>
+            <li><a href="yourprofile.html">Your Profile</a></li>
+            <li><a href="createdby.html">Created By</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+  <!-- MAIN CONTENT SECTION -->
+  <main>
+    <section class="create-profile-section">
+      <h1>Create Your Profile</h1>
+      <form id="profileForm" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="fullName">Full Name:</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="mobile">Mobile:</label>
+          <input type="tel" id="mobile" name="mobile" placeholder="7032889759" required />
+        </div>
+        <div class="form-group">
+          <label for="profilePic">Profile Picture:</label>
+          <!-- For file upload, you could later integrate Supabase Storage -->
+          <input type="file" id="profilePic" name="profilePic" accept="image/*" />
+        </div>
+        <div class="form-group">
+          <label for="bio">Bio:</label>
+          <textarea id="bio" name="bio" rows="5" placeholder="Tell us about yourself..."></textarea>
+        </div>
+        <button type="submit" class="save-button">Save Profile</button>
+      </form>
+    </section>
+  </main>
+  
+  <!-- FOOTER SECTION -->
+  <footer>
+    <p>&copy; 2025 M Sree Ganesh Naik. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript to handle form submission using Supabase -->
+  <script>
+    // Replace with your actual Supabase project URL and use your provided anon key.
+    const SUPABASE_URL = "https://db.uqpymtfagobwcumamtns.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxcHltdGZhZ29id2N1bWFtdG5zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDEyODQ2ODgsImV4cCI6MjA1Njg2MDY4OH0.dl2vCnR64ZGvgdC8sU7F_cLajvHybhoqRO3PMXGQDX0";
+
+    // Create a Supabase client
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // Handle form submission
+    const form = document.getElementById("profileForm");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      // Collect form values
+      const fullName = document.getElementById("fullName").value;
+      const email = document.getElementById("email").value;
+      const mobile = document.getElementById("mobile").value;
+      const bio = document.getElementById("bio").value;
+      
+      // For file uploads, you can extend this code to use Supabase Storage later.
+
+      // Insert data into the 'profiles' table in Supabase
+      let { data, error } = await supabaseClient
+        .from("profiles")
+        .insert([
+          { full_name: fullName, email: email, mobile: mobile, bio: bio }
+        ]);
+
+      if (error) {
+        console.error("Error saving profile:", error);
+        alert("There was an error saving your profile. Please try again.");
+      } else {
+        // Redirect to the Your Profile page after saving
+        window.location.href = "yourprofile.html";
+      }
+    });
+  </script>
+</body>
+</html>

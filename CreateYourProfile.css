@@ -1,0 +1,219 @@
+/* ========================================================================= */
+/*                              CSS RESET                                  */
+/* ========================================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* ========================================================================= */
+  /*                             BASE STYLES                                */
+  /* ========================================================================= */
+  body {
+    font-family: 'Aref Ruqaa Ink', serif;
+    background-color: #F4E1D2; /* Brown cream background */
+    color: #333;
+    line-height: 1.6;
+    padding: 1rem;
+  }
+  
+  /* ========================================================================= */
+  /*                        HEADER SECTION STYLES                             */
+  /* ========================================================================= */
+  header {
+    background-color: #fff;
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+  }
+  .left, .right {
+    width: 100px;
+  }
+  .back-button {
+    font-family: 'Aref Ruqaa Ink', serif;
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background-color: #8B4513;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .back-button:hover {
+    background-color: #F4E1D2;
+    color: #333;
+  }
+  .center {
+    flex: 1;
+    text-align: center;
+  }
+  .logo {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+  .logo:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Hidden checkbox for toggling dropdown menu */
+  #menu-toggle {
+    display: none;
+  }
+  .right {
+    position: relative;
+  }
+  
+  /* ========================================================================= */
+  /*                 HAMBURGER MENU ICON & DROPDOWN STYLES                    */
+  /* ========================================================================= */
+  .menu-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .menu-icon span {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    transition: transform 0.2s ease;
+  }
+  .menu-icon:hover span {
+    transform: translateY(-10px);
+  }
+  .dropdown-menu {
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  .dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .dropdown-menu li a {
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 1rem;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+  }
+  .dropdown-menu li a:hover {
+    background-color: #F4E1D2;
+    transform: translateY(-5px);
+  }
+  .dropdown-menu li:last-child a {
+    border-bottom: none;
+  }
+  #menu-toggle:checked + nav.dropdown-menu {
+    display: block;
+  }
+  
+  /* ========================================================================= */
+  /*                    CREATE YOUR PROFILE SECTION STYLES                    */
+  /* ========================================================================= */
+  .create-profile-section {
+    background-color: #fff;
+    width: 80%;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  .create-profile-section h1 {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* FORM STYLES */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .form-group {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  .form-group label {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group input[type="file"],
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-family: 'Aref Ruqaa Ink', serif;
+  }
+  .form-group textarea {
+    resize: vertical;
+  }
+  .save-button {
+    background-color: #8B4513;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Aref Ruqaa', serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .save-button:hover {
+    background-color: #F4E1D2;
+    color: #333;
+  }
+  
+  /* ========================================================================= */
+  /*                           FOOTER SECTION STYLES                          */
+  /* ========================================================================= */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
